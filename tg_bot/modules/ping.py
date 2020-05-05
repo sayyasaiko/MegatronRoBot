@@ -10,8 +10,8 @@ from tg_bot.modules.disable import DisableAbleCommandHandler
 
 sites_list = {
     "Telegram": "https://api.telegram.org",
-    "Kaizoku": "https://animekaizoku.com",
-    "Kayo": "https://animekayo.com",
+    "Twitter": "https://twitter.com",
+    "Facebook": "https://www.facebook.com",
     "Jikan": "https://api.jikan.moe/v3"
 }
 
@@ -57,7 +57,7 @@ def ping_func(to_ping: List[str]) -> List[str]:
 
         pinged_site = f"<b>{each_ping}</b>"
 
-        if each_ping is "Kaizoku" or each_ping is "Kayo":
+        if each_ping is "Twitter" or each_ping is "Facebook":
             pinged_site = f'<a href="{sites_list[each_ping]}">{each_ping}</a>'
             ping_time = f"<code>{ping_time} (Status: {r.status_code})</code>"
 
@@ -81,7 +81,7 @@ def ping(bot: Bot, update: Update):
 
 @run_async
 def pingall(bot: Bot, update: Update):
-    to_ping = ["Kaizoku", "Kayo", "Telegram", "Jikan"]
+    to_ping = ["Twitter", "Facebook", "Telegram", "Jikan"]
     pinged_list = ping_func(to_ping)
     pinged_list.insert(2, '')
     uptime = get_readable_time((time.time() - StartTime))
