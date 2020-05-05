@@ -150,7 +150,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
                 parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
     else:
-        update.effective_message.reply_text("I'll Kill All Humans!!")
+        update.effective_message.reply_text("𝙄 𝙒𝙚𝙡𝙡 𝙆𝙞𝙡𝙡 𝘼𝙡𝙡 𝙃𝙪𝙢𝙖𝙣𝙨👿")
 
 
 # for test purposes
