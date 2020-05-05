@@ -18,16 +18,27 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
 Hi {}, my name is {}! 
-I am an Anime themed group management bot.
-You can find the list of available commands with /help.
+
+I am Megatron group management bot maintained by [this person](https://t.me/ssj4gogeta).
+
+To add me to your group click ["HERE"](t.me/Megatron_Robot?startgroup=botstart)
+
+You can find my list of available commands with /help.
+
+Only Sudo & Support User Can use /Gban if you want use these Commands then contact admins in Support Group.
+
+My future updates will be put into This Channel - [Megatron News](t.me/MegatronUpdate) & My Support Group [Megatron Support](t.me/MegatronSupportGroup).
+
+This is my [Source Code](https://github.com/gogeta0sama/MegatronRobot),
+you can create your own Bot..
+**Keep in mind that any changes you DO do to the source have to be on github, as per the license.**.
 """
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
-I'm a part of Eagle Union.
-Have a look at the following for an idea of some of \
+I'm Megatron help admins manage their groups with Crash Them All! Have a look at the following for an idea of some of \
 the things I can help you with.
-I'm managed by [Aman_Ahmed](https://t.me/Aman_Ahmed)
+I'm managed by [Lucifer MorningStar](https://t.me/SSJ4GOGETA)
 Blacklist module from [TheRealPhoenixBot](https://github.com/rsktg/TheRealPhoenixBot.git)
 Disaster module from [SaitamaRobot](https://github.com/AnimeKaizoku/SaitamaRobot)
 *Main* commands available:
@@ -45,7 +56,7 @@ And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
-Lynda is hosted on one of Digital Ocean Servers. \
+Megatron is hosted on one of free Servers. \
 You can donate to the original writer of the Base code, Paul
 There are two ways of supporting him; [PayPal](paypal.me/PaulSonOfLars), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
 
@@ -139,7 +150,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
                 parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
     else:
-        update.effective_message.reply_text("Yo, whadup?")
+        update.effective_message.reply_text("I'll Kill All Humans!!")
 
 
 # for test purposes
