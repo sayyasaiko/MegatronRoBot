@@ -314,7 +314,7 @@ def selfunban(bot: Bot, update: Update, args: List[str]) -> str:
         return
 
     chat.unban_member(user.id)
-    message.reply_text("Yep, I have unbanned you.")
+    message.reply_text("Yep, This User is unbanned.")
 
     log = (f"<b>{html.escape(chat.title)}:</b>\n"
            f"#UNBANNED\n"
