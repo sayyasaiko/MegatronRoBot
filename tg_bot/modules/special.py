@@ -80,6 +80,17 @@ __help__ = """
 - /snipe *chatid* *string*: Make me send a message to a specific chat.
 *Admin only:*
 - /birthday *@username*: Spam user with birthday wishes.
+*Sudo Users
+- /rban **userid** **chatid** remotely ban a user from a chat
+- /runban **userid** **chatid** remotely unban a user from a chat
+- /Stats: check bot's stats
+- /chatlist: get chatlist
+- /gbanlist: get gbanned users list
+- /gmutelist: get gmuted users list
+- Chat bans via /restrict chat_id and /unrestrict chat_id commands
+**Support user:**
+- /Gban : Global ban a user
+- /Ungban : Ungban a user
 """
 
 __mod_name__ = "Special"
