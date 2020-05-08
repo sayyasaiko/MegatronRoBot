@@ -409,7 +409,7 @@ __help__ = f"""
 Gbans, also known as global bans, are used by the bot owners to ban spammers across all groups. This helps protect \
 you and your groups by removing spam flooders as quickly as possible. They can be disabled for your group by calling \
 /gbanstat
-Note: You can appeal gbans or ask gbans at {SUPPORT_CHAT}
+Note: You can appeal gbans or ask gbans at @MegatronSupportGroup
 """
 
 GBAN_HANDLER = CommandHandler("gban", gban, pass_args=True)
