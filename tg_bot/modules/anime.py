@@ -7,7 +7,6 @@ from telegram import Message, Chat, User, ParseMode, Update, Bot, InlineKeyboard
 from telegram.ext import CommandHandler,  run_async
 
 from tg_bot import dispatcher
-from tg_bot.modules.disable import DisableAbleCommandHandler
 
 jikan = Jikan()
 
@@ -197,10 +196,6 @@ ANIME_HANDLER = CommandHandler("anime", anime, pass_args=True)
 CHARACTER_HANDLER = CommandHandler("character", character, pass_args=True)
 UPCOMING_HANDLER = CommandHandler("upcoming", upcoming)
 MANGA_HANDLER = CommandHandler("manga", manga, pass_args=True)
-ANIME_HANDLER = DisableAbleCommandHandler("anime", anime, pass_args=True)
-CHARACTER_HANDLER = DisableAbleCommandHandler("character", character,pass_args=True)
-MANGA_HANDLER = DisableAbleCommandHandler("manga", manga, pass_args=True)
-UPCOMING_HANDLER = DisableAbleCommandHandler("upcoming", upcoming)
 
 dispatcher.add_handler(ANIME_HANDLER)
 dispatcher.add_handler(CHARACTER_HANDLER)
