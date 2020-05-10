@@ -184,7 +184,9 @@ lines will allow you to add multiple triggers.
  - /unblacklist <triggers>: Remove triggers from the blacklist. Same newline logic applies here, so you can remove \
 multiple triggers at once.
  - /rmblacklist <triggers>: Same as above.
- *For Domain Blacklist
+ 
+ *For Domain Blacklist*
+ 
  - /addblacklist <Domain/*> Replace domain with which domain you want to AddBlacklist 
 """
 
@@ -197,5 +199,5 @@ dispatcher.add_handler(ADD_BLACKLIST_HANDLER)
 dispatcher.add_handler(UNBLACKLIST_HANDLER)
 dispatcher.add_handler(BLACKLIST_DEL_HANDLER, group=BLACKLIST_GROUP)
 
-__mod_name__ = "Blacklist Word"
+__mod_name__ = "Blacklist"
 __handlers__ = [BLACKLIST_HANDLER, ADD_BLACKLIST_HANDLER, UNBLACKLIST_HANDLER, (BLACKLIST_DEL_HANDLER, BLACKLIST_GROUP)]
