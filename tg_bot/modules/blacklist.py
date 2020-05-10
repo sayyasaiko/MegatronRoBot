@@ -186,8 +186,7 @@ multiple triggers at once.
  - /rmblacklist <triggers>: Same as above.
  
  *For Domain Blacklist*
- 
- - /addblacklist <Domain/*> Replace domain with which domain you want to AddBlacklist 
+ - /addblacklist 'Domain/*' Replace domain with which domain you want to AddBlacklist 
 """
 
 BLACKLIST_HANDLER = DisableAbleCommandHandler("blacklist", blacklist, pass_args=True)
