@@ -7,6 +7,7 @@ from telegram import Message, Chat, User, ParseMode, Update, Bot, InlineKeyboard
 from telegram.ext import CommandHandler,  run_async
 
 from tg_bot import dispatcher
+from tg_bot.modules.disable import DisableAbleCommandHandler
 
 jikan = Jikan()
 
