@@ -184,9 +184,8 @@ lines will allow you to add multiple triggers.
  - /unblacklist <triggers>: Remove triggers from the blacklist. Same newline logic applies here, so you can remove \
 multiple triggers at once.
  - /rmblacklist <triggers>: Same as above.
- 
  *For Domain Blacklist*
- - /addblacklist 'Domain/*' Replace domain with which domain you want to AddBlacklist 
+ - /addblacklist _Domain/*_ Replace domain with which domain you want to AddBlacklist 
 """
 
 BLACKLIST_HANDLER = DisableAbleCommandHandler("blacklist", blacklist, pass_args=True)
