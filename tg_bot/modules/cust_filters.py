@@ -169,8 +169,14 @@ def reply_filter(bot: Bot, update: Update):
 
     chat_filters = sql.get_chat_triggers(chat.id)
     for keyword in chat_filters:
-        pattern = r"( |^|[^\w])" + re.escape(keyword) + r"( |$|[^\w])"
-        if re.search(pattern, to_match, flags=re.IGNORECASE):
+        try:
+          pattern = r"( |^|[^\w])" + keyword + r"( |$|[^\w])"
+          match = re.search(pattern, to_match, flags=re.IGNORECASE)
+        except Exception:
+            message.reply_text(f"Removing filter {keyword} due to broken regex.")
+            sql.remove_filter(chat.id, keyword)
+            return
+        if match:
             filt = sql.get_filter(chat.id, keyword)
             if filt.is_sticker:
                 message.reply_sticker(filt.reply)
@@ -197,14 +203,14 @@ def reply_filter(bot: Bot, update: Update):
                     if excp.message == "Unsupported url protocol":
                         message.reply_text("You seem to be trying to use an unsupported url protocol. Telegram "
                                            "doesn't support buttons for some protocols, such as tg://. Please try "
-                                           "again, or ask in @MegatronSupportGroup for help.")
+                                           f"again, or ask in @MegatronSupportGroup for help.")
                     elif excp.message == "Reply message not found":
                         bot.send_message(chat.id, filt.reply, parse_mode=ParseMode.MARKDOWN,
                                          disable_web_page_preview=True,
                                          reply_markup=keyboard)
                     else:
                         message.reply_text("This note could not be sent, as it is incorrectly formatted. Ask in "
-                                           "@MegatronSupportGroup if you can't figure out why!")
+                                           f"@MegatronSupportGroup if you can't figure out why!")
                         LOGGER.warning("Message %s could not be parsed", str(filt.reply))
                         LOGGER.exception("Could not parse filter %s in chat %s", str(filt.keyword), str(chat.id))
 
