@@ -6,16 +6,16 @@ from telegram import Update, Bot, ParseMode
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, MessageHandler, Filters, run_async
 
-import haruka.modules.sql.blacklist_sql as sql
-from haruka import dispatcher, LOGGER
-from haruka.modules.disable import DisableAbleCommandHandler
-from haruka.modules.helper_funcs.chat_status import user_admin, user_not_admin
-from haruka.modules.helper_funcs.extraction import extract_text
-from haruka.modules.helper_funcs.misc import split_message
+import tg_bot.modules.sql.blacklist_sql as sql
+from tg_bot import dispatcher, LOGGER
+from tg_bot.modules.disable import DisableAbleCommandHandler
+from tg_bot.modules.helper_funcs.chat_status import user_admin, user_not_admin
+from tg_bot.modules.helper_funcs.extraction import extract_text
+from tg_bot.modules.helper_funcs.misc import split_message
 
-from haruka.modules.connection import connected
+from tg_bot.modules.connection import connected
 
-from haruka.modules.tr_engine.strings import tld
+from tg_bot.modules.tr_engine.strings import tld
 
 BLACKLIST_GROUP = 11
 
@@ -191,6 +191,8 @@ def __stats__():
     return "• `{}` blacklist triggers, across `{}` chats.".format(
         sql.num_blacklist_filters(), sql.num_blacklist_filter_chats())
 
+
+__mod_name__ = "Blacklist"
 
 __help__ = """
 Blacklists are used to stop certain triggers from being said in a group. Any time the trigger is mentioned, the message will immediately be deleted. A good combo is sometimes to pair this up with warn filters!
