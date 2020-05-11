@@ -22,6 +22,7 @@ googletrans
 jikanpy
 speedtest-cli
 tldextract
+redis
 coffeehouse
 typing
 gtts
