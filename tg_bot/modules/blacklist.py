@@ -212,15 +212,6 @@ Blacklists are used to stop certain triggers from being said in a group. Any tim
 - /addurl <urls>: Add a domain to the blacklist. The bot will automatically parse the url.
 - /delurl <urls>: Remove urls from the blacklist.
 
-*Top tip*
-Blacklists allow you to use some modifiers to match "unknown" characters. For example, you can use the ? character to match a single occurence of any non-whitespace character.
-You could also use the  modifier, which matches any number of any character. If you want to blacklist urls, this will allow you to match the full thing. It matches every character except spaces. This is cool if you want to stop, for example, url shorteners.
-For example, the following will Delete any bit.ly link:
-/addblacklist bit.ly/
-If you wanted to only match bit.ly/ links followed by three characters, you could use:
-/addblacklist bit.ly/??? 
-This would match bit.ly/abc, but not bit.ly/abcd.
-
 *Example*
 - /addblacklist the admins suck
 This would delete any message containing 'the admins suck'.
