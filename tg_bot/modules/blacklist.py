@@ -20,7 +20,6 @@ BLACKLIST_GROUP = 11
 
 
 @run_async
-@connection_status
 @user_admin
 def blacklist(bot: Bot, update: Update, args: List[str]):
     msg = update.effective_message
