@@ -15,7 +15,6 @@ from tg_bot.modules.helper_funcs.misc import split_message
 
 from tg_bot.modules.connection import connected
 
-from tg_bot.modules.tr_engine.strings import tld
 
 BLACKLIST_GROUP = 11
 
