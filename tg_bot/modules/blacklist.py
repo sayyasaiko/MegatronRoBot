@@ -14,45 +14,48 @@ from tg_bot.modules.helper_funcs.misc import split_message
 
 from tg_bot.modules.connection import connected
 
+from tg_bot.modules.tr_engine.strings import tld
 
 BLACKLIST_GROUP = 11
 
 
 @run_async
-@user_admin
 def blacklist(bot: Bot, update: Update, args: List[str]):
     msg = update.effective_message
     chat = update.effective_chat
+    user = update.effective_user
 
-    update_chat_title = chat.title
-    message_chat_title = update.effective_message.chat.title
-
-    if update_chat_title == message_chat_title:
-        base_blacklist_string = "Current <b>blacklisted</b> words:\n"
+    conn = connected(bot, update, chat, user.id, need_admin=False)
+    if conn:
+        chat_id = conn
+        chat_name = dispatcher.bot.getChat(conn).title
     else:
-        base_blacklist_string = f"Current <b>blacklisted</b> words in <b>{update_chat_title}</b>:\n"
+        if chat.type == "private":
+            return
+        else:
+            chat_id = update.effective_chat.id
+            chat_name = chat.title
 
-    all_blacklisted = sql.get_chat_blacklist(chat.id)
+    filter_list = tld(chat.id, "blacklist_active_list").format(chat_name)
 
-    filter_list = base_blacklist_string
+    all_blacklisted = sql.get_chat_blacklist(chat_id)
 
     if len(args) > 0 and args[0].lower() == 'copy':
         for trigger in all_blacklisted:
-            filter_list += f"<code>{html.escape(trigger)}</code>\n"
+            filter_list += "<code>{}</code>\n".format(html.escape(trigger))
     else:
         for trigger in all_blacklisted:
-            filter_list += f" - <code>{html.escape(trigger)}</code>\n"
+            filter_list += " • <code>{}</code>\n".format(html.escape(trigger))
 
     split_text = split_message(filter_list)
     for text in split_text:
-        if text == base_blacklist_string:
-            if update_chat_title == message_chat_title:
-                msg.reply_text("There are no blacklisted messages here!")
-            else:
-                msg.reply_text(f"There are no blacklisted messages in <b>{update_chat_title}</b>!",
-                               parse_mode=ParseMode.HTML)
+        if filter_list == tld(chat.id, "blacklist_active_list").format(
+                chat_name):  #We need to translate
+            msg.reply_text(tld(chat.id, "blacklist_no_list").format(chat_name),
+                           parse_mode=ParseMode.HTML)
             return
         msg.reply_text(text, parse_mode=ParseMode.HTML)
+
             
 
 
