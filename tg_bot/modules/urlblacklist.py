@@ -13,7 +13,7 @@ from tg_bot.modules.sql import urlblacklist_sql as sql
 
 @run_async
 @user_admin
-def add_blacklist_url(bot: Bot, update: Update):
+def add_blacklist_url(bot: Bot, update: Update, args: List[str]):
     chat = update.effective_chat
     message = update.effective_message
     urls = message.text.split(None, 1)
