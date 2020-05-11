@@ -229,8 +229,7 @@ This would delete any message containing url "bit.ly".
 
 BLACKLIST_HANDLER = DisableAbleCommandHandler("blacklist",
                                               blacklist,
-                                              pass_args=True,
-                                              admin_ok=True)
+                                              pass_args=True)
 ADD_BLACKLIST_HANDLER = CommandHandler("addblacklist", add_blacklist)
 UNBLACKLIST_HANDLER = CommandHandler(["unblacklist", "rmblacklist"],
                                      unblacklist)
