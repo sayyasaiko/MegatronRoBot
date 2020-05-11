@@ -29,3 +29,4 @@ gtts
 PTable
 wikipedia
 pyowm
+yaml
