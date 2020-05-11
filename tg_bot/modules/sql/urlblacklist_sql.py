@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText
 
-from haruka.modules.sql import BASE, SESSION
+from tg_bot.modules.sql import BASE, SESSION
 
 
 class URLBlackListFilters(BASE):
