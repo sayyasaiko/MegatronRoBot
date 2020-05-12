@@ -442,6 +442,8 @@ def __migrate__(old_chat_id, new_chat_id):
     sql.migrate_chat(old_chat_id, new_chat_id)
 
 
+    __mod_name__ = "Warnings"
+    
 __help__help__ = """
  - /warns <userhandle>: get a user's number, and reason, of warns.
  - /warnlist: list of all current warning filters
@@ -455,13 +457,11 @@ be a sentence, encompass it with quotes, as such: `/addwarn "very angry" This is
  - /strongwarn <on/yes/off/no>: If set to on, exceeding the warn limit will result in a ban. Else, will just punch.
 """
 
-__mod_name__ = "Warnings"
 
 WARN_HANDLER = DisableAbleCommandHandler("warn",
                                          warn_user,
                                          pass_args=True,
-                                         filters=Filters.group,
-                                         admin_ok=True)
+                                         filters=Filters.group)
 RESET_WARN_HANDLER = DisableAbleCommandHandler(["resetwarn", "resetwarns"],
                                                reset_warns,
                                                pass_args=True,
@@ -472,16 +472,13 @@ SENDRULES_QUERY_HANDLER = CallbackQueryHandler(sendrules_handler,
 MYWARNS_HANDLER = DisableAbleCommandHandler("warns",
                                             warns,
                                             pass_args=True,
-                                            filters=Filters.group,
-                                            admin_ok=True)
+                                            filters=Filters.group)
 ADD_WARN_HANDLER = DisableAbleCommandHandler("addwarn",
                                              add_warn_filter,
-                                             filters=Filters.group,
-                                             admin_ok=True)
+                                             filters=Filters.group)
 RM_WARN_HANDLER = DisableAbleCommandHandler(["nowarn", "stopwarn"],
                                             remove_warn_filter,
-                                            filters=Filters.group,
-                                            admin_ok=True)
+                                            filters=Filters.group)
 LIST_WARN_HANDLER = DisableAbleCommandHandler(["warnlist", "warnfilters"],
                                               list_warn_filters,
                                               filters=Filters.group,
@@ -491,8 +488,7 @@ WARN_FILTER_HANDLER = MessageHandler(CustomFilters.has_text & Filters.group,
 WARN_LIMIT_HANDLER = DisableAbleCommandHandler("warnlimit",
                                                set_warn_limit,
                                                pass_args=True,
-                                               filters=Filters.group,
-                                               admin_ok=True)
+                                               filters=Filters.group)
 WARN_STRENGTH_HANDLER = CommandHandler("strongwarn",
                                        set_warn_strength,
                                        pass_args=True,
