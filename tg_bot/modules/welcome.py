@@ -133,7 +133,7 @@ def new_member(bot: Bot, update: Update, job_queue: JobQueue):
                 update.effective_message.reply_text("Huh! Someone with a Demon disaster level just joined!", reply_to_message_id=reply)
 
             # Welcome Whitelisted
-            elif new_mem.id in TIGER_USERS:
+            elif new_mem.id in SARDEGNA_USERS:
                 update.effective_message.reply_text("Oof! A Tiger disaster just joined!", reply_to_message_id=reply)
 
             # Welcome Tigers
