@@ -443,7 +443,7 @@ def __migrate__(old_chat_id, new_chat_id):
 
 
     
-__help__help__ = False
+__help__ = False
 
 
 WARN_HANDLER = DisableAbleCommandHandler("warn",
