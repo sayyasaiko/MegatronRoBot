@@ -16,7 +16,7 @@ def media_telegraph(bot: Bot, update: Update):
 
 @run_async
 def post_telegraph(bot: Bot, update: Update, args: List[str]):
-    short_name = "Created By @Megatron_RoBot 😬"
+    short_name = "Created By @Megatron_RoBot 🤖"
     msg = update.effective_message # type: Optional[Message]
     telegraph = Telegraph()
     r = telegraph.create_account(short_name=short_name)
@@ -34,7 +34,6 @@ def post_telegraph(bot: Bot, update: Update, args: List[str]):
 
 __help__ = """
 - /telepost - as reply to a long message
-- /telemedia - as a reply to a media less than 5MiB
 """
 __mod_name__ = "Telegra.ph"
 
