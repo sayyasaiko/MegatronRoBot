@@ -33,7 +33,7 @@ def post_telegraph(bot: Bot, update: Update, args: List[str]):
 
 
 __help__ = """
-- /telepost - as reply to a long message
+- /telepost <Post Title> - as reply to a long message
 """
 __mod_name__ = "Telegra.ph"
 
