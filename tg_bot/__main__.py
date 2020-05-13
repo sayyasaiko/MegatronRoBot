@@ -25,13 +25,13 @@ To add me to your group click ["HERE"](t.me/Megatron_Robot?startgroup=botstart)
 
 You can find my list of available commands with /help.
 
-Only Sudo & Support User Can use /Gban if you want use these Commands then contact admins in Support Group.
+Only Sudo & Support User Can use Special Module if you want use these Modules Commands then contact admins in Megatron Support.
 
 My future updates will be put into This Channel - [Megatron News](t.me/MegatronUpdate) & My Support Group [Megatron Support](t.me/MegatronSupportGroup).
 
 This is my [Source Code](https://github.com/gogeta0sama/MegatronRobot),
-you can create your own Bot..
-**Keep in mind that any changes you DO do to the source have to be on github, as per the license.**.
+
+**Original Fork [Source Code](https://github.com/ArazoraTaro/LyndaRobot)
 """
 
 HELP_STRINGS = """
@@ -39,7 +39,7 @@ Hey there! My name is *{}*.
 I'm Megatron help admins manage their groups with Crash Them All! Have a look at the following for an idea of some of \
 the things I can help you with.
 I'm managed by [Lucifer MorningStar](https://t.me/SSJ4GOGETA)
-Blacklist module from [TheRealPhoenixBot](https://github.com/rsktg/TheRealPhoenixBot.git)
+ChatBot module from [TheRealPhoenixBot](https://github.com/rsktg/TheRealPhoenixBot.git)
 Disaster module from [SaitamaRobot](https://github.com/AnimeKaizoku/SaitamaRobot)
 *Main* commands available:
  - /start: start the bot
