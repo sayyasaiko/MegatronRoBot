@@ -35,12 +35,12 @@ def send_rules(update, chat_id, from_pm=False):
     rules = sql.get_rules(chat_id)
     text = f"The rules for *{escape_markdown(chat.title)}* are:\n\n{rules}"
 
-    if from_pm and rules:
+    if from_pm and limits:
         bot.send_message(user.id, text, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
     elif from_pm:
         bot.send_message(user.id, "The group admins haven't set any rules for this chat yet. "
                                   "This probably doesn't mean it's lawless though...!")
-    elif rules:
+    elif limits:
         update.effective_message.reply_text("Contact me in PM to get this group's rules.",
                                             reply_markup=InlineKeyboardMarkup(
                                                 [[InlineKeyboardButton(text="Rules",
@@ -80,8 +80,8 @@ def __stats__():
 
 def __import_data__(chat_id, data):
     # set chat rules
-    rules = data.get('info', {}).get('rules', "")
-    sql.set_rules(chat_id, rules)
+    limits = data.get('info', {}).get('limits', "")
+    sql.set_rules(chat_id, limits)
 
 
 def __migrate__(old_chat_id, new_chat_id):
