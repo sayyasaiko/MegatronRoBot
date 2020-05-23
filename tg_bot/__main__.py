@@ -17,48 +17,34 @@ from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
-Hi {}, my name is {}! 
+Hey *{}* ! , My Name Is *{}* ! 
 
-I am Megatron group management bot maintained by [this person](https://t.me/ssj4gogeta).
+I'm A Group Manager Bot Maintained By This [Beautiful Girl!](https://t.me/RashmikaMandannaOfficial). 
 
-To add me to your group click ["HERE"](t.me/Megatron_Robot?startgroup=botstart)
+Need Support?  Join [My Support Group](https://t.me/Sabrina_RoBotChat). 
 
-You can find my list of available commands with /help.
+Want To Add Me Into Your Groups? [Click Here!](http://telegram.me/RashmikaMandannaOfficialBot?startgroup=botstart)
 
-Only Sudo & Support User Can use Special Module if you want use these Modules Commands then contact admins in Megatron Support.
+Hit /help To Know More About My Full Potential Use! 
 
-My future updates will be put into This Channel - [Megatron News](t.me/MegatronUpdate) & My Support Group [Megatron Support](t.me/MegatronSupportGroup).
-
-This is my [Source Code](https://github.com/gogeta0sama/MegatronRobot),
-
-**Original Fork [Source Code](https://github.com/ArazoraTaro/LyndaRobot)
 """
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
-I'm Megatron help admins manage their groups with Crash Them All! Have a look at the following for an idea of some of \
-the things I can help you with.
-I'm managed by [Lucifer MorningStar](https://t.me/SSJ4GOGETA)
-ChatBot module from [TheRealPhoenixBot](https://github.com/rsktg/TheRealPhoenixBot.git)
-Disaster module from [SaitamaRobot](https://github.com/AnimeKaizoku/SaitamaRobot)
-*Main* commands available:
- - /start: start the bot
- - /help: PM's you this message.
- - /help <module name>: PM's you info about that module.
- - /donate: information about how to donate!
- - /settings:
-   - in PM: will send you your settings for all supported modules.
-   - in a group: will redirect you to pm, with all that chat's settings.
+
+*Main* *Commands* *Available* :
+ ↔ /start: start the bot
+ ↔ /help: PM's you this message.
+ ↔ /help <module name>: PM's you info about that module.
+ ↔ /donate: information about how to donate!
+ ↔ /settings:
+ ↔ in PM: will send you your settings for all supported modules.
+ ↔ in a group: will redirect you to pm, with all that chat's settings.
 
 
-{}
-And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
-Megatron is hosted on one of free Servers. \
-You can donate to the original writer of the Base code, Paul
-There are two ways of supporting him; [PayPal](paypal.me/PaulSonOfLars), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
+DONATE_STRING = """Sorry! I Don't Accept Donations!"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -150,7 +136,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
                 parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
     else:
-        update.effective_message.reply_text("𝙄 𝙒𝙚𝙡𝙡 𝙆𝙞𝙡𝙡 𝘼𝙡𝙡 𝙃𝙪𝙢𝙖𝙣𝙨👿")
+        update.effective_message.reply_text("Hey! PM Me If You Have Any Questions On How To Use Me!")
 
 
 # for test purposes
