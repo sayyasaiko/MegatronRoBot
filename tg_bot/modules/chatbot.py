@@ -104,7 +104,7 @@ def list_chatbot_chats(bot: Bot, update: Update):
             sleep(e.retry_after)
     update.effective_message.reply_text(text, parse_mode="HTML")
 
-__mod_name__ = "Chatbot"
+__mod_name__ = "ChatBot"
 
 __help__ = f"""
 Chatbot utilizes the CoffeeHouse API and allows Megatron to talk back making your chat more interactive.
